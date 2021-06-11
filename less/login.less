@@ -1,0 +1,39 @@
+@import "config";
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: @screenHeight;
+  background: url("../images/background.jpg") no-repeat;
+}
+.login-container {
+  width: 600px;
+  background-color: #24252A;
+  border-radius: 30px;
+  padding: 30px;
+}
+.text{
+  color: white;
+}
+.form-container{
+  flex: 1;
+  .form-span{
+    flex: 0.4;
+  }
+  .auth-input{
+    flex: 0.5;
+  }
+}
+.sign-up{
+  color: blue;
+  text-decoration: none;
+}
+.form-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrong{
+  color: lightcoral !important;
+}

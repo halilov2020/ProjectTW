@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database>
+    <user>
+        <id>1</id>
+        <username>halilov2020</username>
+        <password>123123</password>
+        <firstname>Dmitrii</firstname>
+        <lastname>Halilov</lastname>
+    </user>
+    <user>
+        <id>2</id>
+        <username>test</username>
+        <password>test123</password>
+        <firstname>testName</firstname>
+        <lastname>testLastName</lastname>
+    </user>
+</database>
