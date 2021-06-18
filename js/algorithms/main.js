@@ -7,7 +7,6 @@ let num_lines;
 let heights = [];
 let delay;
 $("#nrLines").change(function() {
-  console.log();
   scale = 1/$("#nrLines")[0].value;
   height_step = scale * canvas.height;
   line_width = scale * canvas.width;
@@ -22,10 +21,9 @@ $("#nrLines").change(function() {
   drawLines();
 
 });
-
-$("#delay").change(function(){
-
-});
+$('input[type=range]').on('input', function(){
+  delay = $('input[type=range]')[0].value;
+})
 
 $(".submit-button").click(function() {
   let listValue = $('.list').children("option:selected").val();
@@ -34,7 +32,6 @@ $(".submit-button").click(function() {
       shuffleLines();
       drawLines();
       break;
-
     case 'bubble-sort':
       bubbleSort();
       break;

@@ -7,8 +7,7 @@ function login(event){
       let xmlDoc = this.responseXML;
       let users = xmlDoc.getElementsByTagName('user');
       for(let i = 0; i < users.length; i++){
-        if(users[i].children[1].textContent == username.toString() && users[i].children[2].textContent == password.toString()){
-          console.log("authorized");
+        if(users[i].children[0].textContent == username.toString() && users[i].children[1].textContent == password.toString()){
           window.localStorage.setItem("authorized", "true");
           window.location.href = "http://localhost:63342/ProjectTW/index.html";
         }
@@ -25,6 +24,30 @@ function register(event){
   let username = event.target.elements.username2.value;
   let password = event.target.elements.password2.value;
   let repPassword = event.target.elements.password22.value;
+  if(password == repPassword) {
+    let xml = new XMLHttpRequest();
+    console.log("start")
+
+    xml.onreadystatechange = function () {
+      console.log(this.readyState + " " + this.status)
+      if (this.readyState == 4 && this.status == 200) {
+        console.log("enter")
+        let resp = this.responseXML;
+        let user = resp.createElement("user");
+        let xmlUsername = resp.createElement("username");
+        xmlUsername.appendChild(resp.createTextNode(username));
+        let xmlPassword = resp.createElement("password");
+        xmlPassword.appendChild(resp.createTextNode(password))
+
+        user.appendChild(xmlUsername);
+        user.appendChild(xmlPassword);
+        resp.documentElement.appendChild(user);
+
+      }
+    }
+    xml.open("GET", "../ProjectTW/xml/users.xml", true);
+    xml.send();
+  }
 }
 $('input[name=password2]').on("input", function(){
   let p1 = $('input[name=password2]');

@@ -11,21 +11,21 @@
 <div class="login-container">
   <div class="form-container">
     <h3 class="text mb-3">First time here? Please register...</h3>
-    <form method="POST" onsubmit="register(event)">
+    <form method="POST" >
       <div class="input-group mb-3">
         <span class="input-group-text form-span" id="label1">Username</span>
-        <input type="text" name="username2" class="form-control auth-input" placeholder="ex:ionut.ursu" aria-describedby="label1">
+        <input id="username" type="text" name="username2" class="form-control auth-input" placeholder="ex:ionut.ursu" aria-describedby="label1">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text form-span" id="label2">Password</span>
-        <input type="password" name="password2" class="form-control auth-input" placeholder="ex:9m0chjD34vB" aria-describedby="label2">
+        <input id="password" type="password" name="password2" class="form-control auth-input" placeholder="ex:9m0chjD34vB" aria-describedby="label2">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text form-span" id="label3">Repeat password</span>
-        <input type="password" name="password22" class="form-control auth-input" placeholder="ex:9m0chjD34vB" aria-describedby="label2">
+        <input id="password2" type="password" name="password22" class="form-control auth-input" placeholder="ex:9m0chjD34vB" aria-describedby="label2">
       </div>
       <div class="form-footer">
-        <button type="submit" name="submit2" class="form-control mb-3" disabled>Submit</button>
+        <button type="submit" onclick="register(event)" name="submit2" class="form-control mb-3" disabled>Submit</button>
         <div class="text">Already have an account? <a href="index.html" class="sign-up">Sign In</a></div>
       </div>
     </form>
